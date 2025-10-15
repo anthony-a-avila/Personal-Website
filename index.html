@@ -5,31 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="My personal portfolio showcasing hobbies, GitHub projects, and an image gallery.">
   <title>My Portfolio | Home</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-gray-50 text-gray-900 font-sans">
-
+<body>
   <!-- Header / Navigation -->
-  <header class="bg-gray-900 text-white py-4">
-    <nav class="flex justify-center space-x-8">
-      <a href="index.html" class="hover:text-blue-400">Home</a>
-      <a href="gallery.html" class="hover:text-blue-400">Image Gallery</a>
-    </nav>
-  </header>
+    <header>
+        <div class="header-content">
+            <div class="site-title">
+                <h1>Anthony Avila</h1>
+            </div>
+            <nav>
+                <a href="index.html">About</a>
+                <a href="gallery.html">Gallery</a>
+            </nav>
+        </div> 
+    </header>       
 
   <!-- Main Content -->
-  <main class="max-w-4xl mx-auto p-6">
-    
+  <main class="content-wrapper">
     <!-- Introduction -->
-    <section class="mb-10 text-center">
-      <h1 class="text-3xl font-bold mb-2">Anthony Avila</h1>
-      <p class="text-gray-700">Welcome to my page! I’m a senior in Cognitive Science at UC Berkeley and an aspiring software developer who enjoys building tools to facilitate general public literacy, personal scholarship, librarianship, and art-making.</p>
+    <section class="about-me">
+        <div class="about-content">
+            <img src="assets/_me.jpg" alt="Photo of Anthony Avila" class="profile-pic">
+            <div class="about-text">
+                <p>
+                    Welcome to my page! I’m a senior in Cognitive Science at UC Berkeley and an aspiring software developer who enjoys building tools to facilitate general public literacy, personal scholarship, librarianship, and art-making.
+                </p>
+            </div>
+        </div>
     </section>
 
     <!-- Hobbies -->
-    <section class="mb-10">
-      <h2 class="text-2xl font-semibold mb-2">Hobbies</h2>
-      <ul class="list-disc list-inside text-gray-700">
-        <li>Reading (currently working through PIHKAL by Alexander and Ann Shuglin)</li>
+    <section class="hobbies">
+      <h2>Hobbies</h2>
+      <ul>
+        <li>Reading (currently working through <i>PIHKAL</i>)</li>
         <li>Playing Guitar</li>
         <li>Weightlifting</li>
         <li>Swimming</li>
@@ -46,63 +56,61 @@
     </section>
 
     <!-- GitHub Pinned Projects -->
-    <section class="mb-10">
-      <h2 class="text-2xl font-semibold mb-4">Portfolio</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-
-
-        <a href="https://github.com/anthony-a-avila/ChordShift" target="_blank" class="block border rounded-xl shadow hover:shadow-lg transition p-4">
-          <h3 class="font-semibold text-lg mb-1">ChordShift</h3>
-          <p class="text-sm text-gray-600 mb-2">A Python-based tool designed to help musicians and composers explore unique harmonic combinations using algorithmic generation. By leveraging pitch-class sets within the 12-tone equal temperament system, ChordShift enables users to discover novel harmonic ideas and expand their musical vocabulary. Compares two search algorithms: A* and Simulated Annealing, to generate intermediate chords that satisfy user-defined harmonic constraints.</p>
+    <section>
+      <h2>Portfolio</h2>
+      <div class="projects">
+        <a href="https://github.com/anthony-a-avila/ChordShift" target="_blank" class="project-card">
+          <h3>ChordShift</h3>
+          <p class="project-description">A Python-based tool designed to help musicians and composers explore unique harmonic combinations using algorithmic generation. By leveraging pitch-class sets within the 12-tone equal temperament system, ChordShift enables users to discover novel harmonic ideas and expand their musical vocabulary. Compares two search algorithms: A* and Simulated Annealing, to generate intermediate chords that satisfy user-defined harmonic constraints.</p>
         </a>
 
-        <a href="https://github.com/anthony-a-avila/Audio-Classifier" target="_blank" class="block border rounded-xl shadow hover:shadow-lg transition p-4">
+        <a href="https://github.com/anthony-a-avila/Audio-Classifier" target="_blank" class="project-card">
             <h3 class="font-semibold text-lg mb-1">Audio Classifier</h3>
-            <p class="text-sm text-gray-600 mb-2">This project compares the machine learning techniques of Random Forests, Support Vector Machines (SVM), and Recurrent Neural Network with Long Short-Term Memory (RNN-LSTM) in the classification of sounds from the ESC-50 audio dataset.</p>
+            <p class="project-description">This project compares the machine learning techniques of Random Forests, Support Vector Machines (SVM), and Recurrent Neural Network with Long Short-Term Memory (RNN-LSTM) in the classification of sounds from the ESC-50 audio dataset.</p>
         </a>
 
-        <a href="https://github.com/anthony-a-avila/Arithmetic-Practice" target="_blank" class="block border rounded-xl shadow hover:shadow-lg transition p-4">
-            <h3 class="font-semibold text-lg mb-1">Arithmetic Practice</h3>
-            <p class="text-sm text-gray-600 mb-2">Designed to assist a tutor in helping a student build proficiency in fundamental arithmetic operations performed mentally.</p>
+        <a href="https://github.com/anthony-a-avila/Arithmetic-Practice" target="_blank" class="project-card">
+            <h3>Arithmetic Practice</h3>
+            <p class="project-description">Designed to assist a tutor in helping a student build proficiency in fundamental arithmetic operations performed mentally.</p>
         </a>
 
-        <a href="https://github.com/anthony-a-avila/Personal-Website" target="_blank" class="block border rounded-xl shadow hover:shadow-lg transition p-4">
-            <h3 class="font-semibold text-lg mb-1">Personal Website</h3>
-            <p class="text-sm text-gray-600 mb-2">You're looking at it!</p>
+        <a href="https://github.com/anthony-a-avila/Personal-Website" target="_blank" class="project-card">
+            <h3>Personal Website</h3>
+            <p class="project-description">You're looking at it!</p>
         </a>
 
         <!-- Link to Image Gallery -->
-        <a href="gallery.html" class="block border rounded-xl shadow hover:shadow-lg transition p-4 text-center bg-gray-100">
-            <h3 class="font-semibold text-lg mb-1">Image Gallery</h3>
-            <p class="text-sm text-gray-600 mb-2">A tiny sampling of the hundreds of thousands of images I've made with Midjourney over the last 3 years.</p>
+        <a href="gallery.html" target="_blank" class="project-card">
+            <h3>Image Gallery</h3>
+            <p class="project-description">A tiny sampling of the hundreds of thousands of images I've made with Midjourney over the last 3 years.</p>
         </a>
       </div>
     </section>
 
     <!-- Basic Form -->
-    <section class="mb-10">
-      <h2 class="text-2xl font-semibold mb-4">Get in Touch</h2>
-      <form class="space-y-4 max-w-md">
+    <section class="contact">
+      <h2>Get in Touch</h2>
+      <form>
         <div>
-          <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
-          <input type="text" id="name" name="name" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" placeholder="Your Name">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your Name">
         </div>
         <div>
-          <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-          <input type="email" id="email" name="email" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" placeholder="you@example.com">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com">
         </div>
         <div>
-          <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
-          <textarea id="message" name="message" rows="3" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" placeholder="Your message..."></textarea>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="3" placeholder="Your message..."></textarea>
         </div>
-        <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Send</button>
+        <button type="submit">Send</button>
       </form>
     </section>
 
   </main>
 
   <!-- Footer -->
-  <footer class="text-center py-6 text-gray-500 border-t mt-10">
+  <footer>
     <p>&copy; 2025 Anthony Avila. All rights reserved.</p>
   </footer>
 

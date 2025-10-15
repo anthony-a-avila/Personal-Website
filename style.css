@@ -1,0 +1,313 @@
+/* === GLOBAL BLURRED BACKGROUND === */
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  color: #111;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* The blurred image layer behind EVERYTHING */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("assets/_background.jpg") center/cover no-repeat fixed;
+  filter: blur(15px) brightness(1.1);
+  z-index: -1;          /* sits behind all content */
+  transform: scale(1.05);
+}
+
+/* === HEADER / NAVIGATION === */
+header {
+  background-color: transparent;    /* make invisible */
+  color: #222;
+  padding: 1em 0;
+  border-bottom: none;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;          /* full width */
+  max-width: none;      /* remove centering constraint */
+  margin: 0;            /* no auto-centering */
+  padding: 0 1em;       /* consistent spacing from edges */
+  box-sizing: border-box;
+}
+
+.site-title h1 {
+  font-size: 2rem;                  /* larger name */
+  color: #111;
+  margin: 0;
+}
+
+/* Navbar links (smaller) */
+nav {
+  display: flex;
+  gap: 1.5em;
+}
+
+nav a {
+  color: #444;
+  font-size: 0.95rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* === ABOUT ME FLEX LAYOUT === */
+.about-me {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5em;
+  flex-wrap: wrap;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  padding: 2em;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.about-text {
+  max-width: 500px;
+  line-height: 1.6;
+  color: #111;
+  text-align: left;
+}
+
+.profile-pic {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  margin: 0;
+}
+
+/* === MAIN CONTENT === */
+main {
+  max-width: 1000px;
+  margin: 2em auto;
+  padding: 0 1em;
+}
+
+h1, h2 {
+  margin-bottom: 0.6em;
+}
+
+p {
+  margin-bottom: 1em;
+  color: #444;
+}
+
+/* === HOME PAGE: SECTIONS === */
+section {
+  margin-bottom: 2em;
+}
+
+/* === LISTS === */
+ul {
+  margin-left: 1.5em;
+}
+
+li {
+  margin-bottom: 0.3em;
+}
+
+/* === FORMS === */
+form {
+  max-width: 400px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.3em;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 0.5em;
+  margin-bottom: 1em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
+}
+
+button {
+  background-color: #0070f3;
+  color: #fff;
+  border: none;
+  padding: 0.6em 1.2em;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #005ec2;
+}
+
+/* === GALLERY PAGE === */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 1.5em;
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+/* Responsive: collapse to fewer columns on small screens */
+@media (max-width: 800px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* === FOOTER === */
+footer {
+  text-align: center;
+  color: #666;
+  padding: 2em 0;
+  border-top: 1px solid #ddd;
+  margin-top: 3em;
+}
+
+/* === PORTFOLIO / PROJECT CARDS === */
+.projects {
+  display: flex;                 /* enable flexbox */
+  flex-wrap: wrap;               /* allow wrapping to new lines */
+  gap: 20px;                     /* space between cards */
+  justify-content: center;       /* center them horizontally */
+  margin-top: 2em;
+}
+
+.project-card {
+  background-color: #1e1e1e;     /* dark card look */
+  color: #f0f0f0;
+  border-radius: 10px;
+  padding: 1.5em;
+  flex: 1 1 300px;               /* flexible width: min 300px, expands if room */
+  max-width: 450px;
+  display: flex;                 /* use flex inside the card */
+  flex-direction: column;        /* vertical stack */
+  justify-content: flex-start;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  text-decoration: none;         /* remove link underline */
+  border: 1px solid #333;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  border-color: #555;
+}
+
+/* Title + Description */
+.project-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5em;
+  color: #fff;
+}
+
+.project-card p {
+  font-size: 0.95rem;
+  color: #ccc;
+}
+
+/* A subtle divider between sections if you have one */
+.projects h2 {
+  text-align: center;
+  margin-bottom: 1em;
+  color: #222;
+}
+
+/* Optional responsive tweak */
+@media (max-width: 600px) {
+  .project-card {
+    flex: 1 1 100%;
+  }
+}
+
+.project-card .project-description {
+    color: #fff;
+}
+
+/* === FLEX SECTIONS WITH BLUR EFFECT === */
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  align-items: center;   /* ensures children fill full width */
+  justify-content: center;
+  padding: 0;             /* removes side spacing */
+  margin: 0 auto;
+}
+
+.content-wrapper section {
+  width: 80%;
+  max-width: 900px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.75); /* translucent white */
+  backdrop-filter: blur(8px);            /* subtle glass blur */
+  -webkit-backdrop-filter: blur(8px);    /* for Safari */
+  border-radius: 12px;
+  padding: 2em;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.content-wrapper section:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.content-wrapper section h2 {
+  margin-bottom: 0.5em;
+  font-size: 1.8rem;
+  color: #000;
+}
+
+.content-wrapper section p {
+  line-height: 1.6;
+  color: #222;
+}
