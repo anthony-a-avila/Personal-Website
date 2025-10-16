@@ -17,7 +17,7 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url("assets/_background.jpg") center/cover no-repeat fixed;
+  background: url("https://github.com/anthony-a-avila/Personal-Website/blob/main/assets/_background.jpg?raw=true") center/cover no-repeat fixed;
   filter: blur(15px) brightness(1.1);
   z-index: -1;          /* sits behind all content */
   transform: scale(1.05);
@@ -27,6 +27,8 @@ body::before {
 header {
   background-color: transparent;    /* make invisible */
   color: #222;
+  font-family: 'Noto Sans', Arial, sans-serif;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 5);
   padding: 1em 0;
   border-bottom: none;
 }
@@ -44,7 +46,7 @@ header {
 
 .site-title h1 {
   font-size: 2rem;                  /* larger name */
-  color: #111;
+  color: white;
   margin: 0;
 }
 
@@ -55,7 +57,8 @@ nav {
 }
 
 nav a {
-  color: #444;
+  color: white;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 5);
   font-size: 0.95rem;
   text-decoration: none;
   font-weight: bold;
@@ -82,16 +85,16 @@ nav a:hover {
   background: rgba(255, 255, 255, 0.75);
   backdrop-filter: blur(8px);
   border-radius: 12px;
-  padding: 2em;
+  padding: 1.2em 1.5em;
   max-width: 900px;
   margin: 0 auto;
 }
 
 .about-text {
-  max-width: 500px;
+  max-width: 100%;
   line-height: 1.6;
   color: #111;
-  text-align: left;
+  text-align: center;
 }
 
 .profile-pic {
@@ -99,6 +102,7 @@ nav a:hover {
   height: 220px;
   border-radius: 50%;
   object-fit: cover;
+  object-position: center 20%;
   flex-shrink: 0;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
   margin: 0;
@@ -113,11 +117,6 @@ main {
 
 h1, h2 {
   margin-bottom: 0.6em;
-}
-
-p {
-  margin-bottom: 1em;
-  color: #444;
 }
 
 /* === HOME PAGE: SECTIONS === */
@@ -206,10 +205,20 @@ button:hover {
 /* === FOOTER === */
 footer {
   text-align: center;
-  color: #666;
+  color: white;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 5);
   padding: 2em 0;
   border-top: 1px solid #ddd;
   margin-top: 3em;
+}
+
+.gallery-description {
+    text-align: center;
+    color: white;
+    text-shadow: 0 0 2px rgba(0, 0, 0, 5);
+    padding: 1em 0;
+    border-top: 1px solid #ddd;
+    margin-top: 0.25em;
 }
 
 /* === PORTFOLIO / PROJECT CARDS === */
@@ -222,18 +231,22 @@ footer {
 }
 
 .project-card {
-  background-color: #1e1e1e;     /* dark card look */
+  background: rgba(20, 20, 20, 0.9);    /* semi-transparent black */
+  backdrop-filter: blur(10px);           /* frosted-glass blur */
+  -webkit-backdrop-filter: blur(10px);   /* Safari support */
   color: #f0f0f0;
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 300;
   border-radius: 10px;
   padding: 1.5em;
-  flex: 1 1 300px;               /* flexible width: min 300px, expands if room */
+  flex: 1 1 300px;
   max-width: 450px;
-  display: flex;                 /* use flex inside the card */
-  flex-direction: column;        /* vertical stack */
+  display: flex;
+  flex-direction: column;
   justify-content: flex-start;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  text-decoration: none;         /* remove link underline */
-  border: 1px solid #333;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.1); /* light edge outline */
 }
 
 .project-card:hover {
@@ -287,7 +300,7 @@ footer {
   width: 80%;
   max-width: 900px;
   margin: 0 auto;
-  background: rgba(255, 255, 255, 0.75); /* translucent white */
+  background: rgba(255, 255, 255, 0.65); /* translucent white */
   backdrop-filter: blur(8px);            /* subtle glass blur */
   -webkit-backdrop-filter: blur(8px);    /* for Safari */
   border-radius: 12px;
